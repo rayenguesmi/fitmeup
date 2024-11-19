@@ -15,7 +15,7 @@ class SmartwatchIntegrationRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, SmartwatchIntegration::class);
     }
-
+/*555588*/
 //    /**
 //     * @return SmartwatchIntegration[] Returns an array of SmartwatchIntegration objects
 //     */

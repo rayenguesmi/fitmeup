@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20241110162954 extends AbstractMigration
+final class Version20241119081541 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -24,6 +24,8 @@ final class Version20241110162954 extends AbstractMigration
         $this->addSql('CREATE TABLE fit_me_up_app (id INT AUTO_INCREMENT NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE meal (id INT AUTO_INCREMENT NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE nutrition_plan (id INT AUTO_INCREMENT NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('CREATE TABLE panier (idPanier INT AUTO_INCREMENT NOT NULL, etat INT NOT NULL, userId INT NOT NULL, prix INT DEFAULT NULL, PRIMARY KEY(idPanier)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('CREATE TABLE produit (idProd INT AUTO_INCREMENT NOT NULL, nomProd VARCHAR(20) NOT NULL, descriptionProd VARCHAR(100) NOT NULL, prixProd INT NOT NULL, remise DOUBLE PRECISION NOT NULL, imageProd VARCHAR(155) NOT NULL, PRIMARY KEY(idProd)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE smartwatch_integration (id INT AUTO_INCREMENT NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE user (id INT AUTO_INCREMENT NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE workout_plan (id INT AUTO_INCREMENT NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
@@ -37,6 +39,8 @@ final class Version20241110162954 extends AbstractMigration
         $this->addSql('DROP TABLE fit_me_up_app');
         $this->addSql('DROP TABLE meal');
         $this->addSql('DROP TABLE nutrition_plan');
+        $this->addSql('DROP TABLE panier');
+        $this->addSql('DROP TABLE produit');
         $this->addSql('DROP TABLE smartwatch_integration');
         $this->addSql('DROP TABLE user');
         $this->addSql('DROP TABLE workout_plan');
